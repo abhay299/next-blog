@@ -1,0 +1,28 @@
+.container {
+  /* background-color: bisque; */
+  height: 6rem;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  color: var(--textSoft);
+}
+
+.logo {
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+
+.text {
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    /* background-color: red; */
+    flex-direction: row;
+    gap: 10px;
+    /* align-items: center; */
+    /* justify-content: space-around; */
+  }
+}

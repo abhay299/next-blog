@@ -1,0 +1,13 @@
+.container {
+  min-width: 90px;
+  padding: 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
+.active {
+  background-color: var(--textSoft);
+  color: var(--text);
+}
