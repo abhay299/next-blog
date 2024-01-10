@@ -23,11 +23,13 @@
   .menuButton {
     display: block;
     cursor: pointer;
+    z-index: 1;
   }
 
   .mobileLinks {
+    z-index: 1;
     position: absolute;
-    top: 100px;
+    top: 80px;
     right: 0;
     width: 80%;
     height: calc(100vh - 100px);

@@ -2,13 +2,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  /* background-color: palevioletred; */
 }
 
 .post {
-  width: 30%;
+  width: 32%;
+  /* background-color: red; */
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1080px) {
   .post {
     width: 45%;
   }

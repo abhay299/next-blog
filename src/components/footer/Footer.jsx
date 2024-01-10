@@ -3,7 +3,11 @@ import styles from "./footer.module.css";
 const Footer = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.logo}>Abhay Gupta</div>
+      <div className={styles.logo}>
+        <a href="https://www.linkedin.com/in/abhaygupta299/" target="_blank">
+          Abhay Gupta
+        </a>
+      </div>
       <div className={styles.text}>
         <a
           href="https://abhay-gupta.netlify.app"

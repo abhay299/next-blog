@@ -1,6 +1,7 @@
 .container {
   display: flex;
-  gap: 100px;
+  gap: 80px;
+  padding-top: 1rem;
 }
 
 .imgContainer {
@@ -17,21 +18,18 @@
   flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
 }
 
 .title {
-  font-size: 64px;
+  font-size: 52pt;
+  line-height: 5rem;
+  text-transform: capitalize;
 }
 
 .detail {
   display: flex;
   gap: 20px;
-}
-
-.avatar {
-  border-radius: 50%;
-  object-fit: cover;
 }
 
 .userDetail {
@@ -56,10 +54,24 @@
 @media (max-width: 768px) {
   .container {
     display: block;
+
     /* flex-direction: column; */
     min-height: 100vh;
   }
   .imgContainer {
     /* display: flex; */
+  }
+
+  .textContainer {
+    text-align: center;
+  }
+
+  .detail {
+    display: flex;
+    justify-content: center;
+  }
+
+  .title {
+    line-height: 6rem;
   }
 }

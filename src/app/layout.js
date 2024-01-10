@@ -11,7 +11,10 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Next Blogs",
+  title: {
+    default: "Next Blog Homepage",
+    template: "%s | Next Blog",
+  },
   description: "A blog website to share your knowledge",
 };
 

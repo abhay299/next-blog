@@ -3,6 +3,7 @@ import styles from "./postCard.module.css";
 import Link from "next/link";
 
 const PostCard = ({ post }) => {
+  // console.log("POST ::", post);
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -12,14 +13,14 @@ const PostCard = ({ post }) => {
           </div>
         )}
         <span className={styles.date}>
-          {post?.createdAt.toString().slice(4, 16)}
+          {post?.createdAt?.toString().slice(4, 16)}
         </span>
       </div>
       <div className={styles.bottom}>
         <h1 className={styles.title}>{post?.title}</h1>
-        <p className={styles.desc}>{post?.body}</p>
+        <p className={styles.desc}>{post?.desc}</p>
         <Link className={styles.link} href={`/blog/${post?.slug}`}>
-          READ MORE
+          READ MORE...
         </Link>
       </div>
     </div>
