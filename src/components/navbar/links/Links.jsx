@@ -3,6 +3,7 @@ import { useState } from "react";
 import NavLink from "./navLink/navLink";
 import styles from "./links.module.css";
 import Image from "next/image";
+import { handleLogout } from "@/lib/action";
 
 const links = [
   {
@@ -23,12 +24,8 @@ const links = [
   },
 ];
 
-const Links = () => {
+const Links = ({ session }) => {
   const [open, setOpen] = useState(false);
-
-  // TEMPORARY
-  const session = true;
-  const isAdmin = false;
 
   return (
     <div className={styles.container}>

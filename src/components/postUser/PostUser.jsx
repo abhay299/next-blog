@@ -16,7 +16,7 @@ import { getUser } from "@/lib/data";
 const PostUser = async ({ userId }) => {
   // Fetch Data with an API
   // const user = await getData(userId);
-
+  console.log("USER ID ===>", userId);
   // Fetch Data without an API
   const user = await getUser(userId);
 
@@ -24,7 +24,7 @@ const PostUser = async ({ userId }) => {
     <div className={styles.container}>
       <Image
         className={styles.avatar}
-        src={user.avatar ?? "/noavatar.png"}
+        src={user?.avatar ?? "/noavatar.png"}
         alt="avatar"
         width={50}
         height={50}

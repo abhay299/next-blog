@@ -4,15 +4,20 @@ import PostUser from "@/components/postUser/PostUser";
 import { Suspense } from "react";
 import { getPost } from "@/lib/data";
 
-// const getPostData = async (slug) => {
-//   const response = await fetch(
-//     `https://jsonplaceholder.typicode.com/posts/${slug}`
-//   );
+// Fetch Data with an API
+const getPostData = async (slug) => {
+  console.log("SLUG in API ==>", slug);
 
-//   if (!response.ok) throw new Error("Something went wrong!");
+  // TODO: Revert back to this block of code because
+  // API is being called incorrectly
 
-//   return await response.json();
-// };
+  const response = await fetch(`http://localhost:3000/blog/${slug}`);
+
+  if (!response.ok) throw new Error("Something went wrong!");
+  const data = await response.json();
+  console.log("Frontend RESPONSE =>", data);
+  return data;
+};
 
 export const generateMetadata = async ({ params }) => {
   const { slug } = params;
@@ -27,13 +32,13 @@ export const generateMetadata = async ({ params }) => {
 const SingleBlogPost = async ({ params }) => {
   // console.log("URL Parameters::", params);
   const { slug } = params;
-
+  // console.log("SLUG ::::", slug);
   // Fetch Data with an API
-  // const post = await getPostData(slug);
+  const post = await getPostData(slug);
 
   // Fetch Data without an API
-  const post = await getPost(slug);
-  // console.log("POST =>", post);
+  // const post = await getPost(slug);
+  // console.log("POST ===>", post);
 
   return (
     <div className={styles.container}>
@@ -47,7 +52,7 @@ const SingleBlogPost = async ({ params }) => {
         <div className={styles.detail}>
           {post && (
             <Suspense fallback={<div>Loading...</div>}>
-              <PostUser userId={post.userId} />
+              <PostUser userId={post?.userId} />
             </Suspense>
           )}
           <div className={styles.userDetail}>
