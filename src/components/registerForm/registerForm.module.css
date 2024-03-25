@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 14px;
+  color: white;
+}
+
+.form input {
+  padding: 20px;
+  background-color: var(--bg);
+  color: var(--textColor);
+  border: none;
+  border-radius: 5px;
+}
+
+.form button {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--textSoft);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}

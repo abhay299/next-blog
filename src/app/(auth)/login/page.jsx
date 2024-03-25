@@ -1,5 +1,6 @@
-import { handleGithubLogin, login } from "@/lib/action";
-import React from "react";
+import LoginForm from "@/components/loginForm/loginForm";
+import { handleGithubLogin } from "@/lib/action";
+import styles from "./login.module.css";
 
 const LoginPage = async () => {
   // const session = await auth();
@@ -7,15 +8,14 @@ const LoginPage = async () => {
   // console.log("Session: ", session);
 
   return (
-    <div>
-      <form action={handleGithubLogin}>
-        <button>Login with GitHub</button>
-      </form>
-      <form style={{ color: "black" }} action={login}>
-        <input type="text" placeholder="Username" name="username" />
-        <input type="password" placeholder="Password" name="password" />
-        <button>Login</button>
-      </form>
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <form action={handleGithubLogin}>
+          <button>Login with GitHub</button>
+        </form>
+        <span style={{ margin: "20px" }}>OR</span>
+        <LoginForm />
+      </div>
     </div>
   );
 };
